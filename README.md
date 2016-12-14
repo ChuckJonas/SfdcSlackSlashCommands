@@ -1,4 +1,4 @@
-# Sfdc Slack Slash-Commands
+# SFDC Slack Slash-Commands
 A framework for adding Slack Slash Commands to Salesforce.  Allows you to easily write your own slack slash commands that run on salesforce.
 
 ## Setup
@@ -13,11 +13,11 @@ A framework for adding Slack Slash Commands to Salesforce.  Allows you to easily
 
 5. Set Label `Slack_API_Token` == `Token` From Step #4
 
-6. Test by running `/[cmd] help`
+6. Test by running `/[cmd] help`. You can adjust the help response by changing the `Slack_Command_Help_Message` custom label
 
 ## Adding a commands
 
-1. Create a new class that inherits from `ISlackCommand`.  Implement `canExecute(String cmd)`, `getReponse(SlackCommand.SlackCommandParams params)` and `runDML`
+1: Create a new class that inherits from `ISlackCommand`.  Implement `canExecute(String cmd)`, `getReponse(SlackCommand.SlackCommandParams params)` and `runDML`
 
 ``` java
 public class Foo implements ISlackCommand{
@@ -38,7 +38,7 @@ public class Foo implements ISlackCommand{
 }
 ```
 
-2. Enable command: `Develop` - `Custom Metadata Types` - `Slack Command` - `Manage Records` - `New`.
+2: Enable command: `Develop` - `Custom Metadata Types` - `Slack Command` - `Manage Records` - `New`.
 
 * Set `Class` = `Foo`
 
