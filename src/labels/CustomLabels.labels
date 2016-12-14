@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Slack_Command_Help_Message</fullName>
+        <categories>Slack</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Slack Command Help Message</shortDescription>
+        <value>```=== Usage ===
+help: Displays help
+foo: does foo```</value>
+    </labels>
+    <labels>
+        <fullName>Slack_API_Token</fullName>
+        <categories>Slack</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>API Token created by slack when registering slack command</shortDescription>
+        <value>ABC123</value>
+    </labels>
+</CustomLabels>

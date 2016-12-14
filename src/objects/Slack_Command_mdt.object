@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to dynamically determine which slack commands to run.</description>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if this command should run or not</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Determines if this command should run or not</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Class_Name__c</fullName>
+        <description>The name of the class to execute</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The name of the class to execute</inlineHelpText>
+        <label>Class Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Command_Key__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The first word in the command.  Used to determine which command to execute.  No two commands can share a key</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The first word in the command.  Used to determine which command to execute.  No two commands can share a key</inlineHelpText>
+        <label>Command Key</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Immediate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the slack command should execute immediately.  If false, it will run under a future handler that calls out back to slack</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Determines if the slack command should execute immediately.  If false, it will run under a future handler that calls out back to slack</inlineHelpText>
+        <label>Immediate</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Slack Command</label>
+    <pluralLabel>Slack Commands</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
