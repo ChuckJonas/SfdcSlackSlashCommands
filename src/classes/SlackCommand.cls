@@ -1,6 +1,5 @@
-/**
- * helper class
- */
+//Author: Charlie Jonas (charlie@callwaycloudconsulting.com)
+//helper class
 global abstract class SlackCommand {
     //CONSTANTS
     public static final String EPHEMERAL = 'ephemeral';
