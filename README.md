@@ -2,6 +2,8 @@
 
 A framework for adding Slack Slash Commands to Salesforce.  Allows you to easily write your own slack slash commands that run on salesforce.
 
+![SFDC Slack Slash Commands](https://raw.githubusercontent.com/ChuckJonas/SfdcSlackSlashCommands/master//slackslashcommands.gif)
+
 ## Setup
 
 1. Install on SFDC `src`
