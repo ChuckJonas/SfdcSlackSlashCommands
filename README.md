@@ -53,6 +53,25 @@ public class Foo implements ISlackCommand{
 
 * Check `Immedate`.  Immediate commands must respond within 3000ms.  For commands that take longer, leave unchecked.
 
+
+## User Specific Commands
+
+1. Add a custom field called `Slack_User_Id__c` to the Salesforce `User` Object
+
+2. Use [users.list](https://api.slack.com/methods/users.list/test) to retrieve users Ids
+
+3. Map Slack Users -> SFDC users by setting `Slack_User_Id__c`
+
+4. In your command, you can now figure out which users is making the request.  The example below shows a command that will return the last account the user edited.
+
+``` java
+    public SlackCommand.SlackResponse getResponse(SlackCommand.SlackCommandParams params){
+        User u = [SELECT Id FROM User WHERE Slack_User_Id__c =:params.userId];
+        Account acc = [SELECT Name FROM Account WHERE LastModifiedBy =:u.Id ORDER BY LastModifiedDate DESC LIMIT 1];
+        return new SlackCommand.SlackResponse(acc.Name);
+    }
+```
+
 ## References
 
 * [Slack Slash Commands](https://api.slack.com/slash-commands)
