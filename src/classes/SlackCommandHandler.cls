@@ -22,6 +22,7 @@ global class SlackCommandsHandler {
                                                             FROM Slack_Command__mdt WHERE Active__c = true];
 
     //Rest Endpoint called by slack
+    @HttpPost
     global static SlackCommand.SlackResponse respond() {
         RestRequest req = RestContext.request;
         if(req.params.get('token') == API_TOKEN){
