@@ -8,11 +8,11 @@ A framework for easily adding Slack Slash Commands to Salesforce.
 
 1. Install on SFDC `src`
 
-2. `Develop` - `Sites` - `New`.  Note site URL for next step.
+2. `Develop` - `Sites` - `New`.  Note site `Host` and `Path` for next step.  This library uses sites.com to expose as public API as outlined [here](https://developer.salesforce.com/blogs/developer-relations/2012/02/quick-tip-public-restful-web-services-on-force-com-sites.html).
 
 3. `Public Access Settings` - `Apex Class Access`: Allow `SlackCommandHandler`.
 
-4. Register Slack Slash Commands.  Set `URL` == `[SFDC Site Url]/webhooks/services/apexrest/slack`
+4. Register Slack Slash Commands.  Set `URL` == `https://[HOST]/[PATH]/services/apexrest/slack`
 
 5. Set Label `Slack_API_Token` == `Token` From Step #4
 
@@ -95,6 +95,7 @@ public class AccountCommand implements ISlackCommand{
 ## References
 
 * [Slack Slash Commands](https://api.slack.com/slash-commands)
+* [Slack API Message Fomatting Guide](https://api.slack.com/docs/message-formatting)
 
 
 ## License
